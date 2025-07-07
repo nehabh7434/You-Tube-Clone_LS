@@ -1,70 +1,114 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📺 YouTube Clone Project
 
-## Available Scripts
+A full-stack **YouTube-inspired video platform** built using **React.js** for the frontend and **Django REST Framework** for the backend. This project mimics core YouTube functionalities including video listing, watch later, likes, comments, dark mode, and more.
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+### ✅ Core Functionality
+- 🎥 Upload & display videos
+- 🏠 Home page video listing
+- 🔍 Search videos by title
+- 🗂️ Video categories/tags
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ❤️ User Interactions
+- ❤️ Like/Unlike videos
+- ⏰ Watch Later toggle
+- 📤 Share button (copy video link)
+- 💬 Comment section (optional local/backend)
+- 🧾 Subscriptions page
+- 📱 Shorts (vertical video layout)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🎨 UI/UX
+- 🎨 Dark mode toggle (light/dark themes)
+- 🍭 Cute emoji-based buttons
+- 🧭 Sidebar navigation
+- 🎬 Clean responsive layout using Bootstrap 5
 
-### `npm test`
+## 📁 Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+ytclone/
+├── backend/        # Django backend (REST API)
+│   └── api/        # Video model, serializers, views
+├── frontend/       # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Home.js
+│   │   │   ├── Upload.js
+│   │   │   ├── Sidebar.js
+│   │   │   ├── Navbar.js
+│   │   │   ├── Shorts.js
+│   │   │   ├── Liked.js
+│   │   │   ├── Subscriptions.js
+│   │   │   └── VideoPlayer.js
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   └── axiosConfig.js
+```
 
-### `npm run build`
+## 🛠️ Setup Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the repo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/your-username/yt-clone.git
+cd yt-clone
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Backend Setup (Django)
 
-### `npm run eject`
+```bash
+cd backend
+python -m venv env
+env\Scripts\activate  # or source env/bin/activate (Mac/Linux)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+pip install -r requirements.txt
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# If you don’t have requirements.txt, install manually:
+pip install django djangorestframework djangorestframework-simplejwt corsheaders
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The backend will be available at:  
+`http://127.0.0.1:8000`
 
-## Learn More
+### 3. Frontend Setup (React)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd ../frontend
+npm install
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The frontend will be available at:  
+`http://localhost:3000`
 
-### Code Splitting
+## 🔐 Authentication (if added)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Login: `/login`
+- JWT token generation: `/api/token/`
 
-### Analyzing the Bundle Size
+## 📦 Features To Customize
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Connect backend DB to persist likes/watch later
+- Add user profiles
+- Add real-time comments
+- Use PostgreSQL for production
+- Deploy on Render, Vercel, or Heroku
 
-### Making a Progressive Web App
+## 📸 Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Home Page        | Dark Mode         | Video Playback Page  |
+|------------------|-------------------|------------------------|
+| ![home](screens/home.png) | ![dark](screens/dark.png) | ![watch](screens/watch.png) |
 
-### Advanced Configuration
+> Screenshots go in `/frontend/public/screens/` folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 👩‍💻 Author
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with ❤️ by Neha Bharti 
+This project was created as part of a college assignment at IIT Bombay.
